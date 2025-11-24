@@ -1,0 +1,33 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page.title | default: "SITE1101 Portfolio" }}</title>
+    <meta
+      name="description"
+      content="{{ page.description | default: 'Personal portfolio for SITE1101' }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/style.css' | relative_url }}"
+    />
+    <script
+      defer
+      src="{{ '/assets/js/theme-toggle.js' | relative_url }}"
+    ></script>
+  </head>
+  <body class="site" data-theme="light">
+    <div class="site__container">
+      {% include header.html %}
+      <main id="main-content" class="site__main">
+        {{ content }}
+      </main>
+      {% include footer.html %}
+    </div>
+  </body>
+</html>
+

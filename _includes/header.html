@@ -1,0 +1,60 @@
+<header class="site-header">
+  <div class="header__bar">
+    <a class="header__logo" href="{{ '/' | relative_url }}">SITE1101</a>
+    <div class="header__actions">
+      <button
+        class="header__theme-toggle"
+        type="button"
+        data-theme-toggle
+        aria-pressed="false"
+        aria-label="Toggle dark mode"
+      >
+        <span class="header__theme-icon" aria-hidden="true">☀️</span>
+        <span class="header__theme-label">Light</span>
+      </button>
+      <button
+        class="header__menu-toggle"
+        type="button"
+        data-menu-toggle
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
+        <span class="header__menu-line"></span>
+        <span class="header__menu-line"></span>
+        <span class="header__menu-line"></span>
+        <span class="header__menu-text">Menu</span>
+      </button>
+    </div>
+  </div>
+  <nav
+    id="primary-navigation"
+    class="header__nav nav"
+    aria-label="Primary navigation"
+  >
+    <ul class="nav__list">
+      <li class="nav__item">
+        <a class="nav__link" href="{{ '/' | relative_url }}">Home</a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" href="{{ '/about.html' | relative_url }}">About</a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" href="{{ '/projects.html' | relative_url }}"
+          >Projects</a
+        >
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" href="{{ '/books.html' | relative_url }}">Books</a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" href="{{ '/art.html' | relative_url }}">Art</a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" href="{{ '/resume.html' | relative_url }}"
+          >Resume</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
