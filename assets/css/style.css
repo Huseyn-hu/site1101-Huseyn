@@ -1697,3 +1697,15 @@ body,
   box-shadow: 0 6px 18px rgba(28, 29, 33, 0.16);
 }
 
+@media (max-width: 767px) {
+  .resume {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .resume__section {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
