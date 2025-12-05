@@ -4,50 +4,368 @@ title: Resume
 ---
 
 <section class="section resume">
-  <header class="section__header">
-    <h1 class="section__title">Resume</h1>
-    <a href="{{ '/assets/documents/huseyn-cv.pdf' | relative_url }}" class="resume__download" download>Download My CV (PDF)</a>
+  <header class="section__header resume__header">
+    <div class="resume__heading">
+      <h1 class="section__title">Resume</h1>
+      <p class="section__subtitle">
+        Mathematics student at ADA University with strong leadership and volunteering experience. Directed large scale events, coordinated diverse teams, and promoted social impact initiatives. Skilled in communication, organization, and art direction, with a passion for community development, cultural exchange, and creative problem solving. Dedicated to driving positive change through active engagement.
+      </p>
+    </div>
+    <a
+      class="resume__download"
+      href="{{ '/assets/documents/huseyn-cv.pdf' | relative_url }}"
+      download
+      >Download CV (PDF)</a
+    >
   </header>
 
-  <div class="resume__content">
-    <section class="resume__section">
+  <div class="resume__grid">
+    <section class="resume__section card resume__section--about">
+      <h2 class="resume__title">About Me</h2>
+      <p class="resume__text">
+        Mathematics student at ADA University with strong leadership and volunteering experience. Directed large scale events, coordinated diverse teams, and promoted social impact initiatives. Skilled in communication, organization, and art direction, with a passion for community development, cultural exchange, and creative problem solving. Dedicated to driving positive change through active engagement.
+      </p>
+    </section>
+
+    <section class="resume__section card">
       <h2 class="resume__title">Education</h2>
       <div class="resume__item">
-        <h3 class="resume__item-title">Mathematics</h3>
+        <div class="resume__item-top">
+          <h3 class="resume__item-title">Bachelor of Science in Mathematics</h3>
+          <span class="resume__pill">Sep 2024 - Present</span>
+        </div>
         <p class="resume__meta">ADA University</p>
-        <p class="resume__meta">Baku, Azerbaijan</p>
+      </div>
+      <div class="resume__item">
+        <div class="resume__item-top">
+          <h3 class="resume__item-title">Aspire Leaders Program</h3>
+          <span class="resume__pill">Aug 2025 - Present</span>
+        </div>
+        <p class="resume__meta">Aspire Institute</p>
+      </div>
+      <div class="resume__item">
+        <div class="resume__item-top">
+          <h3 class="resume__item-title">Art Course</h3>
+          <span class="resume__pill">Jan 2017 - Jan 2021</span>
+        </div>
+        <p class="resume__meta">Mashtaga Culture Center</p>
       </div>
     </section>
 
-    <section class="resume__section">
+    <section class="resume__section card">
+      <h2 class="resume__title">Work Experience</h2>
+      <div class="resume__entries">
+        <article class="resume__entry">
+          <div class="resume__entry-header">
+            <div>
+              <h3 class="resume__entry-title">Coordinator of the Volunteers</h3>
+              <p class="resume__meta">ADA Volunteers Movement - Baku, Azerbaijan</p>
+            </div>
+            <span class="resume__pill">7 Feb 2025 - 13 Sep 2025</span>
+          </div>
+          <ul class="resume__bullet-list">
+            <li>Directed and supervised 40+ volunteers at the Azerbaijan International Robotics Olympiad, 50+ at the 7th English Olympiad, and 40+ during the Commencement Ceremony, ensuring seamless operations and professionalism.</li>
+            <li>Guided 100+ new students during Open Days through campus tours, fostering engagement and orientation.</li>
+            <li>Led Organization team as an Event Manager during ADA University's admission process and End-of-Year Event (EAPP Students Graduation), ensuring smooth execution and adherence to institutional standards.</li>
+            <li>Developed leadership, teamwork, problem-solving, and communication skills through sustained coordination and public engagement.</li>
+          </ul>
+        </article>
+
+        <article class="resume__entry">
+          <div class="resume__entry-header">
+            <div>
+              <h3 class="resume__entry-title">HR Manager</h3>
+              <p class="resume__meta">ADA Student Academic Support Services - Baku, Azerbaijan</p>
+            </div>
+            <span class="resume__pill">13 Sep 2025 - Current</span>
+          </div>
+          <ul class="resume__bullet-list">
+            <li>Evaluated the performance and engagement of over 100 active volunteers</li>
+            <li>Conducted interviews with more than 60 applicants to assess suitability for volunteer roles</li>
+            <li>Assigned and coordinated tasks for the administrative team and volunteers</li>
+            <li>Served as a main HR representative, supporting recruitment, organization, and team development</li>
+          </ul>
+        </article>
+
+        <article class="resume__entry">
+          <div class="resume__entry-header">
+            <div>
+              <h3 class="resume__entry-title">Human Resources Intern</h3>
+              <p class="resume__meta">ADA Student Academic Support Services - Baku, Azerbaijan</p>
+            </div>
+            <span class="resume__pill">10 Sep 2025 - Current</span>
+          </div>
+          <ul class="resume__bullet-list">
+            <li>Manage daily HR operations, working 3-4 hours per day to ensure smooth departmental workflow</li>
+            <li>Conduct interviews with potential members and staff to support recruitment and team growth</li>
+            <li>Assign and coordinate tasks among staff members for efficient performance</li>
+            <li>Moderate discussion hours and support communication within the department</li>
+            <li>Design social media posts and visual content to promote departmental activities</li>
+          </ul>
+        </article>
+
+        <article class="resume__entry">
+          <div class="resume__entry-header">
+            <div>
+              <h3 class="resume__entry-title">Volunteer Assistant of Director & Organizer Volunteer</h3>
+              <p class="resume__meta">ICPC World Finals Baku - Baku, Azerbaijan</p>
+            </div>
+            <span class="resume__pill">8 Jun 2025 - Current</span>
+          </div>
+          <ul class="resume__bullet-list">
+            <li>Assisted the Director of ICPC World Finals Baku by drafting files, reviewing documentation, and ensuring accuracy.</li>
+            <li>Organized and led the recruitment and coordination of volunteers, building an effective and accountable team.</li>
+            <li>Guided international participants, including ICPC main persons and the Belarus team, with cultural orientation and logistical support in Baku and regional areas.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="resume__section card">
+      <h2 class="resume__title">Volunteering</h2>
+      <div class="resume__entries">
+        <article class="resume__entry">
+          <div class="resume__entry-header">
+            <div>
+              <h3 class="resume__entry-title">Art Teacher Assistant</h3>
+              <p class="resume__meta">Mashtaga Culture Center - Baku, Azerbaijan</p>
+            </div>
+            <span class="resume__pill">Jan 2021 - Feb 2022</span>
+          </div>
+          <ul class="resume__bullet-list">
+            <li>Supported the main instructor in lesson planning and classroom management for 1 year.</li>
+            <li>Conducted masterclasses and taught children fundamental drawing techniques, fostering artistic growth and confidence.</li>
+            <li>Prepared teaching materials, evaluated student progress, and organized art activities.</li>
+            <li>Developed communication, creativity, and leadership skills through mentoring and interaction with young learners.</li>
+          </ul>
+        </article>
+
+        <article class="resume__entry">
+          <div class="resume__entry-header">
+            <div>
+              <h3 class="resume__entry-title">Art Director</h3>
+              <p class="resume__meta">ADA Art Club - Baku, Azerbaijan</p>
+            </div>
+            <span class="resume__pill">May 2025 - Current</span>
+          </div>
+          <ul class="resume__bullet-list">
+            <li>Managed art events and activities, ensuring smooth execution and high-quality outcomes.</li>
+            <li>Directed member recruitment and mentored participants in drawing techniques and creative practices.</li>
+            <li>Monitored artistic projects for quality standards and goals.</li>
+            <li>Developed leadership, organizational, and creative skills through project coordination and team support.</li>
+          </ul>
+        </article>
+
+        <article class="resume__entry">
+          <div class="resume__entry-header">
+            <div>
+              <h3 class="resume__entry-title">Visitor Services Volunteer</h3>
+              <p class="resume__meta">Heydar Aliyev Center - Baku, Azerbaijan</p>
+            </div>
+            <span class="resume__pill">12 Jun 2025 - Current</span>
+          </div>
+          <ul class="resume__bullet-list">
+            <li>Facilitated visitor experiences and ensured compliance with museum rules.</li>
+            <li>Guided guests on exhibitions and cultural significance, communicating effectively in multiple languages.</li>
+            <li>Developed communication, cultural awareness, and customer service skills in a high-profile international setting.</li>
+          </ul>
+        </article>
+
+        <article class="resume__entry">
+          <div class="resume__entry-header">
+            <div>
+              <h3 class="resume__entry-title">Regional Development Public Union</h3>
+              <p class="resume__meta">Baku</p>
+            </div>
+            <span class="resume__pill">2 Dec 2024 - Current</span>
+          </div>
+          <ul class="resume__bullet-list">
+            <li>Engaged in 20+ volunteering initiatives advancing community development, environmental protection, and social responsibility.</li>
+            <li>Led projects such as tree planting and climate change awareness campaigns, and contributed to large-scale events including the Baku Marathon 2025.</li>
+            <li>Facilitated cultural programs by delivering an art masterclass for children during Novruz Holiday 2025.</li>
+            <li>Collaborated with diverse teams, strengthening leadership, teamwork, and organizational skills through sustained involvement in major projects and events.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="resume__section card">
       <h2 class="resume__title">Skills</h2>
-      <div class="resume__skills">
-        <ul class="resume__skills-list">
-          <li>Communication skills</li>
-          <li>Teamwork skills</li>
-          <li>Organizational skills</li>
-          <li>Digital skills</li>
-          <li>Problem solving</li>
-          <li>Creativity</li>
-        </ul>
+      <div class="resume__skills-grid">
+        <div class="resume__skill-group">
+          <h3 class="resume__skill-title">Technical Skills</h3>
+          <ul class="resume__skills-list">
+            <li>Microsoft Office</li>
+            <li>Microsoft Word</li>
+            <li>Microsoft Excel</li>
+            <li>Microsoft Powerpoint</li>
+            <li>Google Drive</li>
+          </ul>
+        </div>
+        <div class="resume__skill-group">
+          <h3 class="resume__skill-title">Artistic Skills</h3>
+          <ul class="resume__skills-list">
+            <li>Professional Artistic Painting</li>
+            <li>Artistic Eye</li>
+            <li>Creativity</li>
+            <li>design principles</li>
+            <li>Professional Drawing</li>
+          </ul>
+          <ul class="resume__bullet-list resume__bullet-list--inline">
+            <li>Studied drawing for 4 years, developing strong artistic skills in composition, perspective, shading, and creative techniques.</li>
+            <li>Practiced advanced methods of academic drawing and applied them to various artistic projects.</li>
+            <li>Worked as a Teacher Assistant for 1 year, supporting the instructor with lesson preparation and classroom management.</li>
+            <li>Guided students during drawing exercises, provided feedback, and assisted in evaluating artworks.</li>
+            <li>Strengthened communication, mentoring, and leadership skills through active involvement in teaching activities.</li>
+          </ul>
+        </div>
+        <div class="resume__skill-group">
+          <h3 class="resume__skill-title">Leadership & Soft Skills</h3>
+          <ul class="resume__skills-list">
+            <li>leadership</li>
+            <li>plan events</li>
+            <li>Teamwork</li>
+            <li>manage teamwork</li>
+            <li>Project Management</li>
+            <li>StrategicPlanning</li>
+            <li>Good listener and communicator</li>
+            <li>Team-work oriented</li>
+            <li>Efficient multi-tasking</li>
+            <li>Team Leadership</li>
+          </ul>
+        </div>
+        <div class="resume__skill-group">
+          <h3 class="resume__skill-title">Organizational Skills</h3>
+          <ul class="resume__skills-list">
+            <li>understand spoken English</li>
+            <li>Motivated</li>
+            <li>Responsibility</li>
+            <li>Decision-making</li>
+            <li>Flexibility</li>
+            <li>Research and analytical skills</li>
+            <li>Outlook</li>
+            <li>Analytical Thinking</li>
+            <li>Deep thinking</li>
+            <li>Deep Understanding</li>
+            <li>Organizational and planning skills</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section class="resume__section">
+    <section class="resume__section card">
       <h2 class="resume__title">Languages</h2>
-      <div class="resume__item">
-        <p class="resume__meta">Azerbaijani — Native</p>
+      <ul class="resume__languages">
+        <li><span class="resume__language">Azerbaijani</span> - Native</li>
+        <li><span class="resume__language">English</span> - C1</li>
+        <li><span class="resume__language">Turkish</span> - C2</li>
+        <li><span class="resume__language">Russian</span> - A2</li>
+      </ul>
+    </section>
+
+    <section class="resume__section card">
+      <h2 class="resume__title">Certifications</h2>
+      <div class="resume__cert-grid">
+        <article class="resume__cert-card">
+          <div class="resume__entry-header">
+            <div>
+              <h3 class="resume__entry-title">Stepping Up: Preparing Yourself for Leadership</h3>
+              <p class="resume__meta">Queen Mary University</p>
+            </div>
+            <span class="resume__pill">Jun 2025</span>
+          </div>
+          <a class="resume__link" href="https://www.coursera.org/account/accomplishments/verify/2HD6RMCNPWW7" target="_blank" rel="noopener">Link</a>
+        </article>
+
+        <article class="resume__cert-card">
+          <div class="resume__entry-header">
+            <div>
+              <h3 class="resume__entry-title">Foundations of Project Management</h3>
+              <p class="resume__meta">Google</p>
+            </div>
+            <span class="resume__pill">Jun 2025</span>
+          </div>
+          <a class="resume__link" href="https://www.coursera.org/account/accomplishments/verify/OCH71PIYXX4K" target="_blank" rel="noopener">Link</a>
+        </article>
+
+        <article class="resume__cert-card">
+          <div class="resume__entry-header">
+            <div>
+              <h3 class="resume__entry-title">Effective Leadership: Master Management Styles</h3>
+              <p class="resume__meta">Coursera</p>
+            </div>
+            <span class="resume__pill">Jun 2025</span>
+          </div>
+          <a class="resume__link" href="https://www.coursera.org/account/accomplishments/verify/OWQMMXV4JC1R" target="_blank" rel="noopener">Link</a>
+        </article>
+
+        <article class="resume__cert-card">
+          <div class="resume__entry-header">
+            <div>
+              <h3 class="resume__entry-title">Agile Leadership: Introduction to Change</h3>
+              <p class="resume__meta">University of Colorado</p>
+            </div>
+            <span class="resume__pill">Jun 2025</span>
+          </div>
+          <a class="resume__link" href="https://www.coursera.org/account/accomplishments/verify/2H0EWE3SSXFP" target="_blank" rel="noopener">Link</a>
+        </article>
+
+        <article class="resume__cert-card">
+          <div class="resume__entry-header">
+            <div>
+              <h3 class="resume__entry-title">Developing Innovative Ideas for New Companies: The First Step in Entrepreneurship</h3>
+              <p class="resume__meta">University of Maryland</p>
+            </div>
+            <span class="resume__pill">Jun 2025</span>
+          </div>
+          <a class="resume__link" href="https://www.coursera.org/account/accomplishments/verify/R68FEA61T60O" target="_blank" rel="noopener">Link</a>
+        </article>
+
+        <article class="resume__cert-card">
+          <div class="resume__entry-header">
+            <div>
+              <h3 class="resume__entry-title">Introduction to Generative AI</h3>
+              <p class="resume__meta">Google Cloud Skills Boost</p>
+            </div>
+            <span class="resume__pill">Jul 2025</span>
+          </div>
+          <a class="resume__link" href="https://www.coursera.org/account/accomplishments/verify/W32U6HDPMZV9" target="_blank" rel="noopener">Link</a>
+        </article>
+
+        <article class="resume__cert-card">
+          <div class="resume__entry-header">
+            <div>
+              <h3 class="resume__entry-title">Developing An Entrepreneurial Mindset: First Step Towards Success</h3>
+              <p class="resume__meta">Michigan State University</p>
+            </div>
+            <span class="resume__pill">Jun 2025</span>
+          </div>
+          <a class="resume__link" href="https://www.coursera.org/account/accomplishments/verify/W3VUE6DN2ERU" target="_blank" rel="noopener">Link</a>
+        </article>
+
+        <article class="resume__cert-card">
+          <div class="resume__entry-header">
+            <div>
+              <h3 class="resume__entry-title">Introduction to Responsible AI</h3>
+              <p class="resume__meta">Coursera</p>
+            </div>
+            <span class="resume__pill">Jul 2025</span>
+          </div>
+          <a class="resume__link" href="https://www.coursera.org/account/accomplishments/verify/EIX9RJ8W4IT4" target="_blank" rel="noopener">Link</a>
+        </article>
       </div>
     </section>
 
-    <section class="resume__section">
-      <h2 class="resume__title">Experience</h2>
-      <div class="resume__item">
-        <h3 class="resume__item-title">Event Manager</h3>
-        <p class="resume__meta">EAPP End of Year Event</p>
-        <p class="resume__description">Coordinated activities, organized communication, and supported planning. Improved leadership, teamwork, and organizational skills.</p>
-      </div>
+    <section class="resume__section card">
+      <h2 class="resume__title">Hobbies & Interests</h2>
+      <ul class="resume__tags">
+        <li>Reading</li>
+        <li>art</li>
+        <li>volunteering</li>
+        <li>leadership</li>
+        <li>cultural exchange</li>
+        <li>organizing events</li>
+      </ul>
     </section>
   </div>
 </section>
-
