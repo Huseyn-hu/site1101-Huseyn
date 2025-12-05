@@ -25,6 +25,17 @@
         <span class="header__menu-text">Menu</span>
       </button>
     </div>
+    <div class="header__search" role="search">
+      <label class="header__search-label" for="site-search">Search</label>
+      <input
+        id="site-search"
+        class="header__search-input"
+        type="search"
+        placeholder="Search..."
+        autocomplete="off"
+      />
+      <ul class="header__search-results" data-search-results></ul>
+    </div>
   </div>
   <nav
     id="primary-navigation"
@@ -48,6 +59,13 @@
       </li>
       <li class="nav__item">
         <a class="nav__link" href="{{ '/art.html' | relative_url }}">Art</a>
+      </li>
+      <li class="nav__item">
+        <a
+          class="nav__link{% if page.url == '/contact.html' %} nav__link--active{% endif %}"
+          href="{{ '/contact.html' | relative_url }}"
+          >Contact</a
+        >
       </li>
       <li class="nav__item">
         <a class="nav__link" href="{{ '/courses.html' | relative_url }}">Courses</a>

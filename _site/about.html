@@ -12,9 +12,17 @@
       rel="stylesheet"
       href="/assets/css/style.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
     <script
       defer
       src="/assets/js/theme-toggle.js"
+    ></script>
+    <script
+      defer
+      src="/assets/js/search.js"
     ></script>
   </head>
   <body class="site" data-theme="light">
@@ -46,6 +54,17 @@
         <span class="header__menu-text">Menu</span>
       </button>
     </div>
+    <div class="header__search" role="search">
+      <label class="header__search-label" for="site-search">Search</label>
+      <input
+        id="site-search"
+        class="header__search-input"
+        type="search"
+        placeholder="Search..."
+        autocomplete="off"
+      />
+      <ul class="header__search-results" data-search-results></ul>
+    </div>
   </div>
   <nav
     id="primary-navigation"
@@ -71,6 +90,13 @@
         <a class="nav__link" href="/art.html">Art</a>
       </li>
       <li class="nav__item">
+        <a
+          class="nav__link"
+          href="/contact.html"
+          >Contact</a
+        >
+      </li>
+      <li class="nav__item">
         <a class="nav__link" href="/courses.html">Courses</a>
       </li>
       <li class="nav__item">
@@ -84,13 +110,13 @@
 
 
       <main id="main-content" class="site__main">
-        <section class="section">
+        <section class="section" data-aos="fade-up">
   <header class="section__header">
-    <h1 class="section__title">About Me</h1>
+    <h1 class="section__title" data-aos="fade-up" data-aos-delay="50">About Me</h1>
   </header>
 
   <div class="about">
-    <div class="about__intro">
+    <div class="about__intro" data-aos="fade-in" data-aos-delay="100">
       <p>
         I am Huseyn Huseynzada, a Mathematics student at ADA University in Baku, Azerbaijan. I am interested in the connection between mathematics, creativity, and modern technology. I like understanding how mathematical ideas work in real life and how creative thinking can make those ideas more meaningful.
       </p>
@@ -103,21 +129,21 @@
     </div>
 
     <div class="about__grid">
-      <div class="card">
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
         <h2 class="card__title">What I Study</h2>
         <p class="card__content">
           Mathematics at ADA University, focusing on the connection between mathematics, creativity, and modern technology. I explore how mathematical ideas work in real life and how creative thinking makes them more meaningful.
         </p>
       </div>
 
-      <div class="card">
+      <div class="card" data-aos="fade-up" data-aos-delay="200">
         <h2 class="card__title">What I Love</h2>
         <p class="card__content">
           Reading, drawing, volunteering, leadership, and organizing events. These activities help me grow as a communicator and team member while keeping me connected to my artistic side.
         </p>
       </div>
 
-      <div class="card">
+      <div class="card" data-aos="fade-up" data-aos-delay="300">
         <h2 class="card__title">How I Work</h2>
         <p class="card__content">
           Through learning new things, solving problems, and helping others learn. I use creative thinking and mathematical reasoning to build ideas that are both useful and inspiring, recognizing that people's creative ability is what makes innovation possible.
@@ -180,6 +206,36 @@
 </footer>
 
     </div>
+    <div class="assistant">
+      <button class="assistant__button" type="button" aria-label="Open assistant">AI</button>
+      <div class="assistant__panel">
+        <div class="assistant__messages" aria-live="polite"></div>
+        <div class="assistant__input-row">
+          <input
+            class="assistant__input"
+            type="text"
+            placeholder="Ask me anything..."
+            aria-label="Ask a question"
+          />
+          <button class="assistant__send" type="button">Send</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        AOS.init({
+          duration: 600,
+          offset: 80,
+          easing: 'ease-out',
+          once: true,
+        });
+      });
+    </script>
+    <script
+      defer
+      src="/assets/js/assistant.js"
+    ></script>
   </body>
 </html>
 

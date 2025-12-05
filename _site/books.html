@@ -12,9 +12,17 @@
       rel="stylesheet"
       href="/assets/css/style.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
     <script
       defer
       src="/assets/js/theme-toggle.js"
+    ></script>
+    <script
+      defer
+      src="/assets/js/search.js"
     ></script>
   </head>
   <body class="site" data-theme="light">
@@ -46,6 +54,17 @@
         <span class="header__menu-text">Menu</span>
       </button>
     </div>
+    <div class="header__search" role="search">
+      <label class="header__search-label" for="site-search">Search</label>
+      <input
+        id="site-search"
+        class="header__search-input"
+        type="search"
+        placeholder="Search..."
+        autocomplete="off"
+      />
+      <ul class="header__search-results" data-search-results></ul>
+    </div>
   </div>
   <nav
     id="primary-navigation"
@@ -71,6 +90,13 @@
         <a class="nav__link" href="/art.html">Art</a>
       </li>
       <li class="nav__item">
+        <a
+          class="nav__link"
+          href="/contact.html"
+          >Contact</a
+        >
+      </li>
+      <li class="nav__item">
         <a class="nav__link" href="/courses.html">Courses</a>
       </li>
       <li class="nav__item">
@@ -84,13 +110,13 @@
 
 
       <main id="main-content" class="site__main">
-        <section class="section books">
+        <section class="section books" data-aos="fade-up">
   <header class="section__header">
-    <h1 class="section__title">Books I Have Read</h1>
+    <h1 class="section__title" data-aos="fade-up" data-aos-delay="50">Books I Have Read</h1>
   </header>
 
   <div class="books-grid">
-    <article class="book-card card">
+    <article class="book-card card" data-aos="fade-up" data-aos-delay="100">
       <div class="book-card__cover-wrapper">
         <div class="book-card__cover">
           <svg class="book-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -111,7 +137,9 @@
       </div>
     </article>
 
-    <article class="book-card card">
+    </article>
+
+    <article class="book-card card" data-aos="fade-up" data-aos-delay="150">
       <div class="book-card__cover-wrapper">
         <div class="book-card__cover">
           <svg class="book-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -132,7 +160,9 @@
       </div>
     </article>
 
-    <article class="book-card card">
+    </article>
+
+    <article class="book-card card" data-aos="fade-up" data-aos-delay="200">
       <div class="book-card__cover-wrapper">
         <div class="book-card__cover">
           <svg class="book-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -153,7 +183,9 @@
       </div>
     </article>
 
-    <article class="book-card card">
+    </article>
+
+    <article class="book-card card" data-aos="fade-up" data-aos-delay="250">
       <div class="book-card__cover-wrapper">
         <div class="book-card__cover">
           <svg class="book-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -174,7 +206,9 @@
       </div>
     </article>
 
-    <article class="book-card card">
+    </article>
+
+    <article class="book-card card" data-aos="fade-up" data-aos-delay="300">
       <div class="book-card__cover-wrapper">
         <div class="book-card__cover">
           <svg class="book-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -195,7 +229,9 @@
       </div>
     </article>
 
-    <article class="book-card card">
+    </article>
+
+    <article class="book-card card" data-aos="fade-up" data-aos-delay="350">
       <div class="book-card__cover-wrapper">
         <div class="book-card__cover">
           <svg class="book-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -271,6 +307,36 @@
 </footer>
 
     </div>
+    <div class="assistant">
+      <button class="assistant__button" type="button" aria-label="Open assistant">AI</button>
+      <div class="assistant__panel">
+        <div class="assistant__messages" aria-live="polite"></div>
+        <div class="assistant__input-row">
+          <input
+            class="assistant__input"
+            type="text"
+            placeholder="Ask me anything..."
+            aria-label="Ask a question"
+          />
+          <button class="assistant__send" type="button">Send</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        AOS.init({
+          duration: 600,
+          offset: 80,
+          easing: 'ease-out',
+          once: true,
+        });
+      });
+    </script>
+    <script
+      defer
+      src="/assets/js/assistant.js"
+    ></script>
   </body>
 </html>
 

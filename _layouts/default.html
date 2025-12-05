@@ -15,9 +15,17 @@ layout: null
       rel="stylesheet"
       href="{{ '/assets/css/style.css' | relative_url }}"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
     <script
       defer
       src="{{ '/assets/js/theme-toggle.js' | relative_url }}"
+    ></script>
+    <script
+      defer
+      src="{{ '/assets/js/search.js' | relative_url }}"
     ></script>
   </head>
   <body class="site" data-theme="light">
@@ -28,6 +36,36 @@ layout: null
       </main>
       {% include footer.html %}
     </div>
+    <div class="assistant">
+      <button class="assistant__button" type="button" aria-label="Open assistant">AI</button>
+      <div class="assistant__panel">
+        <div class="assistant__messages" aria-live="polite"></div>
+        <div class="assistant__input-row">
+          <input
+            class="assistant__input"
+            type="text"
+            placeholder="Ask me anything..."
+            aria-label="Ask a question"
+          />
+          <button class="assistant__send" type="button">Send</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        AOS.init({
+          duration: 600,
+          offset: 80,
+          easing: 'ease-out',
+          once: true,
+        });
+      });
+    </script>
+    <script
+      defer
+      src="{{ '/assets/js/assistant.js' | relative_url }}"
+    ></script>
   </body>
 </html>
 

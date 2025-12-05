@@ -3,20 +3,22 @@ layout: default
 title: Contact
 ---
 
-<section class="section contact">
+<section class="section contact" data-aos="fade-up">
   <header class="section__header contact__header">
-    <h1 class="section__title">Contact</h1>
-    <p class="section__subtitle">
+    <h1 class="section__title" data-aos="fade-up" data-aos-delay="50">Contact</h1>
+    <p class="section__subtitle" data-aos="fade-in" data-aos-delay="100">
       You can contact me using the form below, I will reply to your email as soon as possible.
     </p>
   </header>
 
   <form
     class="contact__form card"
+    action="https://formspree.io/f/xeoyzznn"
     method="POST"
-    action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ENDPOINT"
+    novalidate
+    data-aos="fade-up"
+    data-aos-delay="150"
   >
-    <!-- Replace the action URL above with your Formspree endpoint for hhuseyn465@gmail.com -->
     <div class="contact__field">
       <label class="contact__label" for="contact-name">Name</label>
       <input
@@ -24,6 +26,7 @@ title: Contact
         type="text"
         id="contact-name"
         name="name"
+        autocomplete="name"
         required
       />
     </div>
@@ -34,7 +37,8 @@ title: Contact
         class="contact__input"
         type="email"
         id="contact-email"
-        name="_replyto"
+        name="email"
+        autocomplete="email"
         required
       />
     </div>
@@ -50,6 +54,50 @@ title: Contact
       ></textarea>
     </div>
 
-    <button class="contact__button" type="submit">Send Message</button>
+    <div class="contact__actions">
+      <button class="contact__button" type="submit">Send Message</button>
+      <p class="contact__status contact__status--hidden" role="status"></p>
+    </div>
   </form>
 </section>
+
+<script>
+  (function () {
+    const form = document.querySelector('.contact__form');
+    const statusEl = document.querySelector('.contact__status');
+
+    if (!form || !statusEl) return;
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      statusEl.textContent = '';
+      statusEl.classList.add('contact__status--hidden');
+      statusEl.classList.remove('contact__status--success', 'contact__status--error');
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          headers: { Accept: 'application/json' },
+          body: formData,
+        });
+
+        if (response.ok) {
+          statusEl.textContent = 'Thank you! Your message has been sent.';
+          statusEl.classList.add('contact__status--success');
+          form.reset();
+        } else {
+          statusEl.textContent = 'There was an error sending your message. Please try again.';
+          statusEl.classList.add('contact__status--error');
+        }
+      } catch (error) {
+        statusEl.textContent = 'There was an error sending your message. Please try again.';
+        statusEl.classList.add('contact__status--error');
+      } finally {
+        statusEl.classList.remove('contact__status--hidden');
+        statusEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  })();
+</script>

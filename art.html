@@ -3,13 +3,13 @@ layout: default
 title: Art
 ---
 
-<section class="section art">
+<section class="section art" data-aos="fade-up">
   <header class="section__header">
-    <h1 class="section__title">My Art</h1>
+    <h1 class="section__title" data-aos="fade-up" data-aos-delay="50">My Art</h1>
   </header>
 
   <div class="art-gallery">
-    <article class="art-card">
+    <article class="art-card" data-aos="zoom-in" data-aos-delay="100">
       <img src="{{ '/assets/images/art/bluesky.jpg' | relative_url }}" alt="Artwork Blue Sky" class="art-card__image">
       <h2 class="art-card__title">Blue Sky</h2>
       <p class="art-card__description">
@@ -17,7 +17,7 @@ title: Art
       </p>
     </article>
 
-    <article class="art-card">
+    <article class="art-card" data-aos="zoom-in" data-aos-delay="200">
       <img src="{{ '/assets/images/art/greenlake.jpg' | relative_url }}" alt="Artwork Green Lake" class="art-card__image">
       <h2 class="art-card__title">Green Lake</h2>
       <p class="art-card__description">
@@ -25,7 +25,7 @@ title: Art
       </p>
     </article>
 
-    <article class="art-card">
+    <article class="art-card" data-aos="zoom-in" data-aos-delay="300">
       <img src="{{ '/assets/images/art/summertime.jpg' | relative_url }}" alt="Artwork Summertime" class="art-card__image">
       <h2 class="art-card__title">Summertime</h2>
       <p class="art-card__description">
@@ -34,4 +34,3 @@ title: Art
     </article>
   </div>
 </section>
-

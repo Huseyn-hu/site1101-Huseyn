@@ -12,9 +12,17 @@
       rel="stylesheet"
       href="/assets/css/style.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
     <script
       defer
       src="/assets/js/theme-toggle.js"
+    ></script>
+    <script
+      defer
+      src="/assets/js/search.js"
     ></script>
   </head>
   <body class="site" data-theme="light">
@@ -46,6 +54,17 @@
         <span class="header__menu-text">Menu</span>
       </button>
     </div>
+    <div class="header__search" role="search">
+      <label class="header__search-label" for="site-search">Search</label>
+      <input
+        id="site-search"
+        class="header__search-input"
+        type="search"
+        placeholder="Search..."
+        autocomplete="off"
+      />
+      <ul class="header__search-results" data-search-results></ul>
+    </div>
   </div>
   <nav
     id="primary-navigation"
@@ -71,6 +90,13 @@
         <a class="nav__link" href="/art.html">Art</a>
       </li>
       <li class="nav__item">
+        <a
+          class="nav__link nav__link--active"
+          href="/contact.html"
+          >Contact</a
+        >
+      </li>
+      <li class="nav__item">
         <a class="nav__link" href="/courses.html">Courses</a>
       </li>
       <li class="nav__item">
@@ -84,20 +110,22 @@
 
 
       <main id="main-content" class="site__main">
-        <section class="section contact">
+        <section class="section contact" data-aos="fade-up">
   <header class="section__header contact__header">
-    <h1 class="section__title">Contact</h1>
-    <p class="section__subtitle">
+    <h1 class="section__title" data-aos="fade-up" data-aos-delay="50">Contact</h1>
+    <p class="section__subtitle" data-aos="fade-in" data-aos-delay="100">
       You can contact me using the form below, I will reply to your email as soon as possible.
     </p>
   </header>
 
   <form
     class="contact__form card"
+    action="https://formspree.io/f/xeoyzznn"
     method="POST"
-    action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ENDPOINT"
+    novalidate
+    data-aos="fade-up"
+    data-aos-delay="150"
   >
-    <!-- Replace the action URL above with your Formspree endpoint for hhuseyn465@gmail.com -->
     <div class="contact__field">
       <label class="contact__label" for="contact-name">Name</label>
       <input
@@ -105,6 +133,7 @@
         type="text"
         id="contact-name"
         name="name"
+        autocomplete="name"
         required
       />
     </div>
@@ -115,7 +144,8 @@
         class="contact__input"
         type="email"
         id="contact-email"
-        name="_replyto"
+        name="email"
+        autocomplete="email"
         required
       />
     </div>
@@ -131,9 +161,53 @@
       ></textarea>
     </div>
 
-    <button class="contact__button" type="submit">Send Message</button>
+    <div class="contact__actions">
+      <button class="contact__button" type="submit">Send Message</button>
+      <p class="contact__status contact__status--hidden" role="status"></p>
+    </div>
   </form>
 </section>
+
+<script>
+  (function () {
+    const form = document.querySelector('.contact__form');
+    const statusEl = document.querySelector('.contact__status');
+
+    if (!form || !statusEl) return;
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      statusEl.textContent = '';
+      statusEl.classList.add('contact__status--hidden');
+      statusEl.classList.remove('contact__status--success', 'contact__status--error');
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          headers: { Accept: 'application/json' },
+          body: formData,
+        });
+
+        if (response.ok) {
+          statusEl.textContent = 'Thank you! Your message has been sent.';
+          statusEl.classList.add('contact__status--success');
+          form.reset();
+        } else {
+          statusEl.textContent = 'There was an error sending your message. Please try again.';
+          statusEl.classList.add('contact__status--error');
+        }
+      } catch (error) {
+        statusEl.textContent = 'There was an error sending your message. Please try again.';
+        statusEl.classList.add('contact__status--error');
+      } finally {
+        statusEl.classList.remove('contact__status--hidden');
+        statusEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  })();
+</script>
 
       </main>
       <footer class="site-footer">
@@ -188,6 +262,36 @@
 </footer>
 
     </div>
+    <div class="assistant">
+      <button class="assistant__button" type="button" aria-label="Open assistant">AI</button>
+      <div class="assistant__panel">
+        <div class="assistant__messages" aria-live="polite"></div>
+        <div class="assistant__input-row">
+          <input
+            class="assistant__input"
+            type="text"
+            placeholder="Ask me anything..."
+            aria-label="Ask a question"
+          />
+          <button class="assistant__send" type="button">Send</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        AOS.init({
+          duration: 600,
+          offset: 80,
+          easing: 'ease-out',
+          once: true,
+        });
+      });
+    </script>
+    <script
+      defer
+      src="/assets/js/assistant.js"
+    ></script>
   </body>
 </html>
 

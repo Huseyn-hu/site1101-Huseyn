@@ -12,9 +12,17 @@
       rel="stylesheet"
       href="/assets/css/style.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
     <script
       defer
       src="/assets/js/theme-toggle.js"
+    ></script>
+    <script
+      defer
+      src="/assets/js/search.js"
     ></script>
   </head>
   <body class="site" data-theme="light">
@@ -46,6 +54,17 @@
         <span class="header__menu-text">Menu</span>
       </button>
     </div>
+    <div class="header__search" role="search">
+      <label class="header__search-label" for="site-search">Search</label>
+      <input
+        id="site-search"
+        class="header__search-input"
+        type="search"
+        placeholder="Search..."
+        autocomplete="off"
+      />
+      <ul class="header__search-results" data-search-results></ul>
+    </div>
   </div>
   <nav
     id="primary-navigation"
@@ -71,6 +90,13 @@
         <a class="nav__link" href="/art.html">Art</a>
       </li>
       <li class="nav__item">
+        <a
+          class="nav__link"
+          href="/contact.html"
+          >Contact</a
+        >
+      </li>
+      <li class="nav__item">
         <a class="nav__link" href="/courses.html">Courses</a>
       </li>
       <li class="nav__item">
@@ -84,12 +110,12 @@
 
 
       <main id="main-content" class="site__main">
-        <section class="section">
+        <section class="section" data-aos="fade-up">
   <div class="hero">
-    <div class="hero__image-wrapper">
+    <div class="hero__image-wrapper" data-aos="fade-in" data-aos-delay="100">
       <img src="/assets/images/profile.jpg" alt="Huseyn Huseynzada" class="hero__image">
     </div>
-    <div class="hero__text">
+    <div class="hero__text" data-aos="fade-up" data-aos-delay="150">
       <h1 class="hero__title">Welcome.</h1>
       <p class="hero__name">I am <strong>Huseyn Huseynzada</strong>, a Mathematics student at ADA University.</p>
       <div class="hero__content">
@@ -107,17 +133,17 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section" data-aos="fade-up" data-aos-delay="100">
   <div class="hero__links">
-    <a href="/about.html" class="card">
+    <a href="/about.html" class="card" data-aos="fade-up" data-aos-delay="100">
       <h2 class="card__title">About Me</h2>
       <p class="card__content">Learn more about my journey, interests, and goals.</p>
     </a>
-    <a href="/art.html" class="card">
+    <a href="/art.html" class="card" data-aos="fade-up" data-aos-delay="200">
       <h2 class="card__title">My Art</h2>
       <p class="card__content">Explore my creative work and visual expressions.</p>
     </a>
-    <a href="/books.html" class="card">
+    <a href="/books.html" class="card" data-aos="fade-up" data-aos-delay="300">
       <h2 class="card__title">My Books</h2>
       <p class="card__content">Discover the books that inspire my thinking.</p>
     </a>
@@ -178,6 +204,36 @@
 </footer>
 
     </div>
+    <div class="assistant">
+      <button class="assistant__button" type="button" aria-label="Open assistant">AI</button>
+      <div class="assistant__panel">
+        <div class="assistant__messages" aria-live="polite"></div>
+        <div class="assistant__input-row">
+          <input
+            class="assistant__input"
+            type="text"
+            placeholder="Ask me anything..."
+            aria-label="Ask a question"
+          />
+          <button class="assistant__send" type="button">Send</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        AOS.init({
+          duration: 600,
+          offset: 80,
+          easing: 'ease-out',
+          once: true,
+        });
+      });
+    </script>
+    <script
+      defer
+      src="/assets/js/assistant.js"
+    ></script>
   </body>
 </html>
 
