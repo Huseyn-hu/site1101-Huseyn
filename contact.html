@@ -1,0 +1,55 @@
+---
+layout: default
+title: Contact
+---
+
+<section class="section contact">
+  <header class="section__header contact__header">
+    <h1 class="section__title">Contact</h1>
+    <p class="section__subtitle">
+      You can contact me using the form below, I will reply to your email as soon as possible.
+    </p>
+  </header>
+
+  <form
+    class="contact__form card"
+    method="POST"
+    action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ENDPOINT"
+  >
+    <!-- Replace the action URL above with your Formspree endpoint for hhuseyn465@gmail.com -->
+    <div class="contact__field">
+      <label class="contact__label" for="contact-name">Name</label>
+      <input
+        class="contact__input"
+        type="text"
+        id="contact-name"
+        name="name"
+        required
+      />
+    </div>
+
+    <div class="contact__field">
+      <label class="contact__label" for="contact-email">Email</label>
+      <input
+        class="contact__input"
+        type="email"
+        id="contact-email"
+        name="_replyto"
+        required
+      />
+    </div>
+
+    <div class="contact__field">
+      <label class="contact__label" for="contact-message">Message</label>
+      <textarea
+        class="contact__textarea"
+        id="contact-message"
+        name="message"
+        rows="5"
+        required
+      ></textarea>
+    </div>
+
+    <button class="contact__button" type="submit">Send Message</button>
+  </form>
+</section>
