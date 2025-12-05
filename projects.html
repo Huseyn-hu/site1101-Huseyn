@@ -3,35 +3,44 @@ layout: default
 title: Projects
 ---
 
-<section class="section projects">
+<section class="section section--projects">
   <header class="section__header">
     <h1 class="section__title">Projects</h1>
   </header>
 
-  <div class="projects__grid">
-    <article class="project-card card">
-      <img src="{{ '/assets/images/project-placeholder.png' | relative_url }}" alt="Project image" class="project-card__image">
-      <h2 class="project-card__title">Learn C++: Introduction</h2>
-      <p class="project-card__description">
-        I completed this course on Codecademy. I practiced writing simple programs, understanding variables, conditions, loops, functions, and how logic works in a compiled language. This helped me build strong foundations in programming.
-      </p>
-    </article>
+  <div class="projects">
+    <div class="projects__grid">
+      <article class="project-card card">
+        <div class="project-card__media">
+          <img
+            class="project-card__image"
+            src="{{ '/assets/images/projects/cai.png' | relative_url }}"
+            alt="Introduction to Computer Architecture project cover"
+          >
+        </div>
+        <div class="project-card__body">
+          <h2 class="project-card__title">Introduction to Computer Architecture</h2>
+          <p class="project-card__description">
+            A university project exploring basic concepts of computer architecture and low-level organization.
+          </p>
+        </div>
+      </article>
 
-    <article class="project-card card">
-      <img src="{{ '/assets/images/project-placeholder.png' | relative_url }}" alt="Project image" class="project-card__image">
-      <h2 class="project-card__title">Computer Architecture: Introduction</h2>
-      <p class="project-card__description">
-        I completed this course on Codecademy. I learned how computers process information, the basics of CPU architecture, memory, and low level operations. This strengthened my interest in connecting math with technology.
-      </p>
-    </article>
-
-    <article class="project-card card">
-      <img src="{{ '/assets/images/project-placeholder.png' | relative_url }}" alt="Project image" class="project-card__image">
-      <h2 class="project-card__title">EAPP End of Year Event (Event Manager)</h2>
-      <p class="project-card__description">
-        I worked as an event manager for this event. I coordinated activities, organized communication, and supported planning. This improved my leadership, teamwork, and organizational skills.
-      </p>
-    </article>
+      <article class="project-card card">
+        <div class="project-card__media">
+          <img
+            class="project-card__image"
+            src="{{ '/assets/images/projects/cppimage.png' | relative_url }}"
+            alt="Learn C++ – Introduction project cover"
+          >
+        </div>
+        <div class="project-card__body">
+          <h2 class="project-card__title">Learn C++ – Introduction</h2>
+          <p class="project-card__description">
+            An introductory C++ project where I practiced syntax, control flow, and basic problem solving.
+          </p>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
-
