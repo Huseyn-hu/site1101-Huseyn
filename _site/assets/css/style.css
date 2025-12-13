@@ -122,6 +122,21 @@ main > *:last-child {
   font-size: 1.05rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.header__logo-icon {
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__logo-text {
+  display: inline-flex;
+  align-items: center;
 }
 
 .header__actions {
@@ -1695,5 +1710,17 @@ body,
 .assistant__send:hover {
   transform: translateY(-1px) scale(1.02);
   box-shadow: 0 6px 18px rgba(28, 29, 33, 0.16);
+}
+
+@media (max-width: 767px) {
+  .resume {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .resume__section {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 }
 
