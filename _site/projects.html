@@ -41,8 +41,20 @@
         aria-pressed="false"
         aria-label="Toggle dark mode"
       >
-        <span class="header__theme-icon" aria-hidden="true">☀️</span>
+        <span class="header__theme-icon" aria-hidden="true">☀</span>
         <span class="header__theme-label">Light</span>
+      </button>
+      <button
+        class="header__snow"
+        type="button"
+        data-snow-button
+        aria-label="Let it snow"
+      >
+        <svg class="header__snow-icon" viewBox="0 0 24 24" role="img" aria-hidden="true">
+          <path
+            d="M12 2.75a.75.75 0 0 1 .75.75v2.16l1.6-.92a.75.75 0 0 1 .74 1.3L13.5 8l1.59.92 2.13-1.23a.75.75 0 1 1 .74 1.3L16.5 10l1.16.67 2.34-1.35a.75.75 0 1 1 .74 1.3l-1.6.92 1.6.92a.75.75 0 1 1-.74 1.3L17.66 13 16.5 13.67l2.13 1.23a.75.75 0 0 1-.74 1.3l-2.13-1.23L13.5 16l1.59.92 1.59-.92a.75.75 0 1 1 .74 1.3l-1.6.92 1.6.92a.75.75 0 0 1-.74 1.3l-2.34-1.35L16.5 20l1.6.92a.75.75 0 1 1-.74 1.3l-2.13-1.23L13.5 21v2a.75.75 0 0 1-1.5 0v-2l-1.73 1a.75.75 0 1 1-.74-1.3l1.6-.92L9.5 20l-2.13 1.23a.75.75 0 0 1-.74-1.3L8.22 19 6.5 18l-1.73 1a.75.75 0 1 1-.74-1.3l1.6-.92-1.6-.92a.75.75 0 1 1 .74-1.3L6.5 14l1.16-.67-2.13-1.23a.75.75 0 1 1 .74-1.3L6.5 12l-1.16-.67-2.34 1.35a.75.75 0 1 1-.74-1.3l1.6-.92-1.6-.92a.75.75 0 1 1 .74-1.3l2.34 1.35L6.5 10l1.16-.67-2.13-1.23a.75.75 0 1 1 .74-1.3L9.5 8l-1.59-.92-1.59.92a.75.75 0 1 1-.74-1.3l1.6-.92-1.6-.92a.75.75 0 0 1 .74-1.3l2.34 1.35L9.5 6V3.5a.75.75 0 0 1 .75-.75Zm0 7a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5Z"
+          />
+        </svg>
       </button>
       <button
         class="header__menu-toggle"
@@ -111,7 +123,6 @@
   </nav>
 </header>
 
-
       <main id="main-content" class="site__main">
         <section class="section section--projects" data-aos="fade-up">
   <header class="section__header">
@@ -151,9 +162,75 @@
           </p>
         </div>
       </article>
+
+      <article class="project-card card" data-aos="fade-up" data-aos-delay="300">
+        <div class="project-card__media">
+          <img
+            class="project-card__image"
+            src="/assets/images/projects/hourofai.jpg"
+            alt="Hour of AI Workshop at Umid Yeri Orphanage in Baku"
+          >
+        </div>
+        <div class="project-card__body">
+          <h2 class="project-card__title">Hour of AI Workshop – Umid Yeri Orphanage (Baku)</h2>
+          <p class="project-card__description">
+            Led an interactive hour-long workshop to introduce kids at Umid Yeri Orphanage to AI basics through live demos and activities.
+          </p>
+          <div class="project-card__readmore" data-readmore>
+            <div class="project-card__full" id="hourofai-details">
+              <p>
+                Built a kid-friendly curriculum covering what AI is, where it shows up in daily life, and how to use tools like image generators responsibly.
+              </p>
+              <p>
+                Facilitated hands-on prompts, Q&amp;A, and safety guidelines while partnering with staff to tailor the session for the group.
+              </p>
+            </div>
+            <button
+              type="button"
+              class="project-card__toggle"
+              aria-expanded="false"
+              aria-controls="hourofai-details"
+            >
+              Read more
+            </button>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
+
+<script>
+  (function () {
+    const sections = document.querySelectorAll('[data-readmore]');
+
+    sections.forEach((section) => {
+      const toggle = section.querySelector('.project-card__toggle');
+      const content = section.querySelector('.project-card__full');
+      if (!toggle || !content) return;
+
+      const setState = (isOpen) => {
+        section.classList.toggle('is-open', isOpen);
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.textContent = isOpen ? 'Show less' : 'Read more';
+        content.style.maxHeight = isOpen ? `${content.scrollHeight}px` : '0px';
+      };
+
+      setState(false);
+
+      toggle.addEventListener('click', () => {
+        const shouldOpen = !section.classList.contains('is-open');
+        setState(shouldOpen);
+      });
+
+      window.addEventListener('resize', () => {
+        if (section.classList.contains('is-open')) {
+          content.style.maxHeight = `${content.scrollHeight}px`;
+        }
+      });
+    });
+  })();
+</script>
 
       </main>
       <footer class="site-footer">
@@ -272,8 +349,11 @@
     </script>
     <script
       defer
+      src="/assets/js/delight.js"
+    ></script>
+    <script
+      defer
       src="/assets/js/assistant.js"
     ></script>
   </body>
 </html>
-

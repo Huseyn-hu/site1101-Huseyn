@@ -41,8 +41,20 @@
         aria-pressed="false"
         aria-label="Toggle dark mode"
       >
-        <span class="header__theme-icon" aria-hidden="true">☀️</span>
+        <span class="header__theme-icon" aria-hidden="true">☀</span>
         <span class="header__theme-label">Light</span>
+      </button>
+      <button
+        class="header__snow"
+        type="button"
+        data-snow-button
+        aria-label="Let it snow"
+      >
+        <svg class="header__snow-icon" viewBox="0 0 24 24" role="img" aria-hidden="true">
+          <path
+            d="M12 2.75a.75.75 0 0 1 .75.75v2.16l1.6-.92a.75.75 0 0 1 .74 1.3L13.5 8l1.59.92 2.13-1.23a.75.75 0 1 1 .74 1.3L16.5 10l1.16.67 2.34-1.35a.75.75 0 1 1 .74 1.3l-1.6.92 1.6.92a.75.75 0 1 1-.74 1.3L17.66 13 16.5 13.67l2.13 1.23a.75.75 0 0 1-.74 1.3l-2.13-1.23L13.5 16l1.59.92 1.59-.92a.75.75 0 1 1 .74 1.3l-1.6.92 1.6.92a.75.75 0 0 1-.74 1.3l-2.34-1.35L16.5 20l1.6.92a.75.75 0 1 1-.74 1.3l-2.13-1.23L13.5 21v2a.75.75 0 0 1-1.5 0v-2l-1.73 1a.75.75 0 1 1-.74-1.3l1.6-.92L9.5 20l-2.13 1.23a.75.75 0 0 1-.74-1.3L8.22 19 6.5 18l-1.73 1a.75.75 0 1 1-.74-1.3l1.6-.92-1.6-.92a.75.75 0 1 1 .74-1.3L6.5 14l1.16-.67-2.13-1.23a.75.75 0 1 1 .74-1.3L6.5 12l-1.16-.67-2.34 1.35a.75.75 0 1 1-.74-1.3l1.6-.92-1.6-.92a.75.75 0 1 1 .74-1.3l2.34 1.35L6.5 10l1.16-.67-2.13-1.23a.75.75 0 1 1 .74-1.3L9.5 8l-1.59-.92-1.59.92a.75.75 0 1 1-.74-1.3l1.6-.92-1.6-.92a.75.75 0 0 1 .74-1.3l2.34 1.35L9.5 6V3.5a.75.75 0 0 1 .75-.75Zm0 7a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5Z"
+          />
+        </svg>
       </button>
       <button
         class="header__menu-toggle"
@@ -110,7 +122,6 @@
     </ul>
   </nav>
 </header>
-
 
       <main id="main-content" class="site__main">
         <section class="section resume" data-aos="fade-up">
@@ -611,8 +622,11 @@
     </script>
     <script
       defer
+      src="/assets/js/delight.js"
+    ></script>
+    <script
+      defer
       src="/assets/js/assistant.js"
     ></script>
   </body>
 </html>
-

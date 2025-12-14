@@ -41,6 +41,72 @@ title: Projects
           </p>
         </div>
       </article>
+
+      <article class="project-card card" data-aos="fade-up" data-aos-delay="300">
+        <div class="project-card__media">
+          <img
+            class="project-card__image"
+            src="{{ '/assets/images/projects/hourofai.jpg' | relative_url }}"
+            alt="Hour of AI Workshop at Umid Yeri Orphanage in Baku"
+          >
+        </div>
+        <div class="project-card__body">
+          <h2 class="project-card__title">Hour of AI Workshop – Umid Yeri Orphanage (Baku)</h2>
+          <p class="project-card__description">
+            Led an interactive hour-long workshop to introduce kids at Umid Yeri Orphanage to AI basics through live demos and activities.
+          </p>
+          <div class="project-card__readmore" data-readmore>
+            <div class="project-card__full" id="hourofai-details">
+              <p>
+                Built a kid-friendly curriculum covering what AI is, where it shows up in daily life, and how to use tools like image generators responsibly.
+              </p>
+              <p>
+                Facilitated hands-on prompts, Q&amp;A, and safety guidelines while partnering with staff to tailor the session for the group.
+              </p>
+            </div>
+            <button
+              type="button"
+              class="project-card__toggle"
+              aria-expanded="false"
+              aria-controls="hourofai-details"
+            >
+              Read more
+            </button>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
+
+<script>
+  (function () {
+    const sections = document.querySelectorAll('[data-readmore]');
+
+    sections.forEach((section) => {
+      const toggle = section.querySelector('.project-card__toggle');
+      const content = section.querySelector('.project-card__full');
+      if (!toggle || !content) return;
+
+      const setState = (isOpen) => {
+        section.classList.toggle('is-open', isOpen);
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.textContent = isOpen ? 'Show less' : 'Read more';
+        content.style.maxHeight = isOpen ? `${content.scrollHeight}px` : '0px';
+      };
+
+      setState(false);
+
+      toggle.addEventListener('click', () => {
+        const shouldOpen = !section.classList.contains('is-open');
+        setState(shouldOpen);
+      });
+
+      window.addEventListener('resize', () => {
+        if (section.classList.contains('is-open')) {
+          content.style.maxHeight = `${content.scrollHeight}px`;
+        }
+      });
+    });
+  })();
+</script>
