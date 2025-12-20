@@ -162,47 +162,6 @@ main > *:last-child {
   transform: translateY(-1px);
 }
 
-.header__snow {
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 50%;
-  border: 1px solid var(--border-color);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--card-color);
-  color: var(--text-color);
-  box-shadow: var(--shadow-soft);
-  transition: background-color var(--transition-base), color var(--transition-base),
-    border-color var(--transition-base), box-shadow var(--transition-base),
-    transform var(--transition-base), filter var(--transition-base);
-}
-
-.header__snow:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.03);
-  border-color: var(--accent-color);
-}
-
-.header__snow:focus-visible {
-  outline: none;
-  border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px rgba(91, 109, 255, 0.18);
-}
-
-.header__snow:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
-  filter: none;
-}
-
-.header__snow-icon {
-  width: 1.2rem;
-  height: 1.2rem;
-  fill: currentColor;
-}
-
 .header__menu-toggle {
   width: 2.75rem;
   height: 2.75rem;
@@ -227,6 +186,110 @@ main > *:last-child {
   font-size: 0;
   height: 0;
   overflow: hidden;
+}
+
+/* SNOW EFFECT */
+.header__snow,
+.js-snow-toggle {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--card-color);
+  color: var(--text-color);
+  font-size: 1.1rem;
+  box-shadow: var(--shadow-soft);
+  transition: background-color var(--transition-base), color var(--transition-base),
+    border-color var(--transition-base), box-shadow var(--transition-base),
+    transform var(--transition-base), filter var(--transition-base), opacity var(--transition-base);
+}
+
+.header__snow:hover,
+.js-snow-toggle:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+  border-color: var(--accent-color);
+}
+
+.header__snow:focus-visible,
+.js-snow-toggle:focus-visible {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(91, 109, 255, 0.18);
+}
+
+.header__snow:disabled,
+.js-snow-toggle:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  filter: none;
+}
+
+#snow-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+#snow-overlay.is-active {
+  opacity: 1;
+}
+
+#snow-overlay.is-leaving {
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+
+.snowflake {
+  position: absolute;
+  top: -6vh;
+  left: 0;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation-name: snow-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
+}
+
+@keyframes snow-fall {
+  0% {
+    transform: translate3d(0, -10vh, 0);
+  }
+  100% {
+    transform: translate3d(var(--drift, 8px), 110vh, 0);
+  }
+}
+
+#toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translate(-50%, 8px);
+  background-color: var(--card-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.85rem;
+  padding: 0.6rem 1rem;
+  box-shadow: var(--shadow-soft);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  z-index: 60;
+}
+
+#toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
 }
 
 .header__nav {
@@ -305,40 +368,6 @@ main > *:last-child {
     position: relative;
     z-index: 1;
   }
-}
-
-.snow-overlay {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 40;
-}
-
-.snow-overlay canvas {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.snow-message {
-  position: fixed;
-  top: 1rem;
-  left: 50%;
-  transform: translate(-50%, -10px);
-  background-color: var(--card-color);
-  color: var(--text-color);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-pill);
-  padding: 0.5rem 0.9rem;
-  box-shadow: var(--shadow-soft);
-  opacity: 0;
-  transition: opacity var(--transition-fast), transform var(--transition-fast);
-  z-index: 60;
-}
-
-.snow-message.is-visible {
-  opacity: 1;
-  transform: translate(-50%, 0);
 }
 
 /* --------------------------------
